@@ -20,6 +20,7 @@ resource "aws_autoscaling_group" "asg" {
   health_check_type = "ELB"
   desired_capacity = 2
   force_delete = true
+  load_balancers = ["${var.asg_load_balancers}"]
   launch_configuration = "${aws_launch_configuration.lc.name}"
 
   tag {

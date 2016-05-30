@@ -35,3 +35,7 @@ variable "asg_availability_zones" {
 variable "asg_subnets" {
   description = "A list of subnet IDs to launch resources in"
 }
+variable "asg_load_balancers" {
+  description = "A list of load balancer names to add to the autoscaling group names"
+  default = ""
+}
