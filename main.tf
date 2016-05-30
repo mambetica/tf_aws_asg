@@ -2,7 +2,7 @@ resource "aws_launch_configuration" "lc" {
     name = "${var.lc_name}"
     image_id = "${var.lc_image_id}"
     instance_type = "${var.lc_instance_type}"
-    security_groups = "${var.lc_security_groups}"
+    security_groups = ["${var.lc_security_groups}"]
 	
     lifecycle {
       create_before_destroy = true
@@ -20,9 +20,14 @@ resource "aws_autoscaling_group" "asg" {
   force_delete = true
   launch_configuration = "${aws_launch_configuration.lc.name}"
 
-  tags {
+  tag {
     Name = "${var.asg_name}"
+	propagate_at_launch = true 
+  }
+  
+  tag {
     Owner = "${var.asg_owner}"
+	propagate_at_launch = true 
   }
   
   lifecycle {
