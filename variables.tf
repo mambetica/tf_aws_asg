@@ -32,3 +32,6 @@ variable "asg_owner" {
 variable "asg_availability_zones" {
   description = "A list of AZs to launch resources in. Required only if you do not specify any vpc_zone_identifier"
 }
+variable "asg_subnets" {
+  description = "A list of subnet IDs to launch resources in"
+}
