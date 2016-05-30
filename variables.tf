@@ -3,7 +3,7 @@
 variable "lc_image_id" {
   description = "The EC2 image ID to launch"
 }
-variable "lc_instance_type"
+variable "lc_instance_type" {
   description = "The size of instance to launch"
 }
 variable "asg_max_size" {
