@@ -21,12 +21,14 @@ resource "aws_autoscaling_group" "asg" {
   launch_configuration = "${aws_launch_configuration.lc.name}"
 
   tag {
-    Name = "${var.asg_name}"
+    key = "Name"
+    value = "${var.asg_name}"
 	propagate_at_launch = true 
   }
   
   tag {
-    Owner = "${var.asg_owner}"
+    key = "Owner"
+    value = "${var.asg_owner}"
 	propagate_at_launch = true 
   }
   
