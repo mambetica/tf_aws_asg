@@ -16,7 +16,7 @@ resource "aws_autoscaling_group" "asg" {
   min_size = "${var.asg_min_size}"
   health_check_grace_period = 300
   health_check_type = "ELB"
-  desired_capacity = 4
+  desired_capacity = 2
   force_delete = true
   launch_configuration = "${aws_launch_configuration.lc.name}"
 
