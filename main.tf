@@ -4,7 +4,7 @@ resource "aws_launch_configuration" "lc" {
   instance_type = "${var.lc_instance_type}"
   security_groups = ["${var.lc_security_groups}"]
   associate_public_ip_address = false
-  
+  user_data = "${file("$var.lc_user_data")}"
   lifecycle {
     create_before_destroy = true
   }

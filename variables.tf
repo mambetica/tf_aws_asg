@@ -12,6 +12,9 @@ variable "asg_max_size" {
 variable "asg_min_size" {
   description = "The minimum size of the auto scale group"
 }
+variable "lc_user_data" {
+  description = "The user data to provide when launching the instance"
+}
 
 #### OPTIONAL ####
 
